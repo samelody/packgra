@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+    compileSdkVersion packgra.compileSdkVersion
+    buildToolsVersion packgra.buildToolsVersion
 
     defaultConfig {
-        applicationId config.appId
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
-        versionCode config.versionCode
-        versionName config.versionName
+        applicationId packgra.appId
+        minSdkVersion packgra.minSdkVersion
+        targetSdkVersion packgra.targetSdkVersion
+        versionCode packgra.versionCode
+        versionName packgra.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -22,9 +22,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    if (config.localLibrary) {
-        compile project(":${config.artifact}")
+    if (packgra.localLibrary) {
+        compile project(":${packgra.artifact}")
     } else {
-        compile "${config.group}:${config.artifact}:${config.versionName}"
+        compile "${packgra.group}:${packgra.artifact}:${packgra.versionName}"
     }
 }
